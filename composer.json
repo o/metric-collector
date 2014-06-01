@@ -1,0 +1,31 @@
+{
+    "name": "osm/metric-collector",
+    "license": "MIT",
+    "type": "library",
+    "description": "Library for collecting local and remote system performance statistics",
+    "keywords": [],
+    "authors": [
+        {
+            "name": "Osman Ungur",
+            "email": "osmanungur@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/process": ">2.3"
+    },
+    "suggest": {
+        "herzult/php-ssh": "Allows executing remote ssh commands",
+        "guzzlehttp/guzzle": "Allows sending HTTP requests",
+        "kriswallsmith/buzz": "Allows sending HTTP requests"
+    },
+    "require-dev": {
+        "herzult/php-ssh": "0.1.0",
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.9",
+        "guzzlehttp/guzzle": "~4.0",
+        "kriswallsmith/buzz": "~0.10"
+    },
+    "autoload": {
+        "psr-0": { "Osm": "src/" }
+    }
+}
