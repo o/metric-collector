@@ -9,10 +9,12 @@ interface CommandExecutorInterface
 {
 
     /**
-     * Executes shell commands.
+     * Executes shell commands and returns response of stdout.
      *
-     * @param  string $command
+     * @param string $command Shell command will be execute
+     *
      * @return string
+     *
      * @throws CommandExecutorInterface
      */
     public function execute($command);

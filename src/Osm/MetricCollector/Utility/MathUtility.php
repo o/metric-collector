@@ -11,7 +11,8 @@ class MathUtility
     /**
      * Calculates percentages of given array values.
      *
-     * @param  array $values
+     * @param array $values
+     *
      * @return array
      */
     public static function calculatePercentages(array $values)

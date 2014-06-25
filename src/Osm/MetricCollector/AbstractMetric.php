@@ -14,7 +14,9 @@ abstract class AbstractMetric implements MetricInterface
     private $arguments = array();
 
     /**
-     * @param array $arguments
+     * Sets metric arguments.
+     *
+     * @param array $arguments An array of arguments for metric.
      */
     final public function setArguments(array $arguments)
     {
@@ -22,9 +24,12 @@ abstract class AbstractMetric implements MetricInterface
     }
 
     /**
-     * @param  string $key
-     * @param  mixed  $default
-     * @return mixed
+     * Returns value of key, key is not exists returns default value.
+     *
+     * @param string $key     Identifier of argument
+     * @param mixed  $default Default value for argument
+     *
+     * @return mixed Value of argument
      */
     final protected function getArgument($key, $default = null)
     {
@@ -52,6 +57,8 @@ abstract class AbstractMetric implements MetricInterface
     }
 
     /**
+     * Returns parsed result.
+     *
      * @return array
      */
     final public function getResult()

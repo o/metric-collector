@@ -14,6 +14,7 @@ interface MetricInterface
      * Returns data from network, shell, file, SNMP etc. for creating metrics.
      *
      * @return mixed
+     *
      * @throws CommandExecutionException
      */
     public function fetch();
@@ -21,7 +22,8 @@ interface MetricInterface
     /**
      * Parses raw data from fetched sources and returns result.
      *
-     * @param  mixed $data
+     * @param mixed $data
+     *
      * @return mixed
      */
     public function parse($data);
