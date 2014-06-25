@@ -34,7 +34,7 @@ class GuzzleHttpClient implements HttpClientInterface
      *
      * @var boolean|string
      */
-    private $verifyCertificate;
+    private $verifyCertificate = true;
 
     /**
      *
@@ -52,7 +52,7 @@ class GuzzleHttpClient implements HttpClientInterface
      *
      * @var array
      */
-    private $headers;
+    private $headers = array();
 
     /**
      *
@@ -80,10 +80,16 @@ class GuzzleHttpClient implements HttpClientInterface
             'auth' => $this->authentication,
             'timeout' => $this->timeout,
             'connect_timeout' => $this->connectTimeout,
-            'verify' => $this->verifyCertificate,
-            'cert' => $this->certificate,
-            'proxy' => $this->proxy
+            'verify' => $this->verifyCertificate
         );
+
+        if ($this->certificate) {
+            $options['cert'] = $this->certificate;
+        }
+
+        if ($this->proxy) {
+            $options['proxy'] = $this->proxy;
+        }
 
         try {
             return $this->httpClient->get($url, $options)->getBody(true);
